@@ -1,13 +1,112 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>jewelry_website</title>
-  </head>
-  <body>
-    <div id="app"></div>
-    <script type="module" src="/src/main.js"></script>
-  </body>
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LUMIÈRE | Luxury Jewelry</title>
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap"
+    rel="stylesheet">
+</head>
+
+<body>
+  <div id="app">
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+      <div class="container nav-content">
+        <div class="nav-links">
+          <a href="#collections">Collections</a>
+          <a href="#about">Our Story</a>
+        </div>
+        <a href="#" class="logo">LUMIÈRE</a>
+        <div class="nav-icons">
+          <button class="icon-btn" aria-label="Search">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <circle cx="11" cy="11" r="8" />
+              <path d="M21 21l-4.35-4.35" />
+            </svg>
+          </button>
+          <button class="icon-btn" aria-label="Cart">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z" />
+              <line x1="3" y1="6" x2="21" y2="6" />
+              <path d="M16 10a4 4 0 01-8 0" />
+            </svg>
+          </button>
+          <button class="icon-btn" aria-label="Profile">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2" />
+              <circle cx="12" cy="7" r="4" />
+            </svg>
+          </button>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero">
+      <div class="hero-bg" id="hero-bg"></div>
+      <div class="hero-content text-center">
+        <p class="hero-subtitle fade-in" style="animation-delay: 0.2s;">Elegance Redefined</p>
+        <h1 class="hero-title fade-in" style="animation-delay: 0.4s;">Timeless Beauty</h1>
+        <a href="#shop" class="btn-primary fade-in" style="animation-delay: 0.6s;">
+          Explore Collection
+          <span class="shimmer"></span>
+        </a>
+      </div>
+    </header>
+
+    <!-- Featured Collection / Product Grid -->
+    <section id="shop" class="section">
+      <div class="container">
+        <div class="section-header text-center">
+          <h2 class="section-title fade-in">Latest Collection</h2>
+          <div class="divider fade-in"></div>
+        </div>
+        <div class="product-grid" id="product-grid">
+          <!-- Products injected by JS -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Product Modal -->
+    <div id="product-modal" class="modal">
+      <div class="modal-content">
+        <button class="modal-close">&times;</button>
+        <div class="modal-body">
+          <div class="modal-image">
+            <img id="modal-img" src="" alt="Product Detail">
+          </div>
+          <div class="modal-details">
+            <h3 id="modal-title">Product Name</h3>
+            <p id="modal-category" class="text-gold">Category</p>
+            <p id="modal-price" class="price">$0.00</p>
+            <p class="modal-desc">
+              Exquisitely crafted to perfection. This piece embodies the essence of luxury and timeless elegance,
+              designed for those who appreciate the finer details in life.
+            </p>
+            <button class="btn-primary btn-add-cart">
+              Add to Cart
+              <span class="shimmer"></span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container text-center">
+        <p>&copy; 2026 LUMIÈRE. All Rights Reserved.</p>
+      </div>
+    </footer>
+  </div>
+  <script type="module" src="/src/main.js"></script>
+</body>
+
 </html>

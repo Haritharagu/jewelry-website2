@@ -4,13 +4,15 @@ A modern, high-end e-commerce website for a luxury jewelry brand. Built with Vit
 
 ## Features
 - **Premium Design**: Soft luxury color palette and elegant typography.
-- **Smooth Animations**: Parallax effects, scroll-triggered reveals, and micro-interactions.
-- **Responsive**: Fully optimized for all devices.
+- **Smooth Animations**: Parallax effects, letter-by-letter headlines, scroll-triggered reveals.
+- **Micro-Interactions**: Hover shimmers, magnetic buttons, and image zooms.
+- **Product Showcase**: Grid layout with "Quick View" modal.
+- **Responsive**: Fully optimized for mobile, tablet, and desktop.
 
 ## Tech Stack
 - **Framework**: Vite (Vanilla JS template)
-- **Styling**: Vanilla CSS (Variables, Flexbox, Grid)
-- **Animation**: CSS Transitions & Keyframes
+- **Styling**: Vanilla CSS (Variables, Flexbox, Grid, Keyframes)
+- **Icons**: SVG Icons (Lucide style)
 
 ## Getting Started
 
@@ -25,4 +27,8 @@ A modern, high-end e-commerce website for a luxury jewelry brand. Built with Vit
 3.  Start the development server:
     ```bash
     npm run dev
+    ```
+4.  Build for production:
+    ```bash
+    npm run build
     ```
