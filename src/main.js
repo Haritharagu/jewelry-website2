@@ -32,7 +32,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  // Unsplash Fallback URLs for Products (since generation failed)
+  // Unsplash Fallback URLs for Products
   const products = [
     {
       id: 1,
@@ -61,6 +61,34 @@ document.addEventListener('DOMContentLoaded', () => {
       price: "$1,950",
       image: "https://images.unsplash.com/photo-1611591437281-460bfbe1220a?q=80&w=1000&auto=format&fit=crop",
       category: "Bracelets"
+    },
+    {
+      id: 5,
+      name: "Emerald Cut Ring",
+      price: "$5,100",
+      image: "https://images.unsplash.com/photo-1515377905703-c4788e51af15?q=80&w=1000&auto=format&fit=crop",
+      category: "Rings"
+    },
+    {
+      id: 6,
+      name: "Ruby Pendant",
+      price: "$3,200",
+      image: "https://images.unsplash.com/photo-1531995811006-35cb42e1a022?q=80&w=1000&auto=format&fit=crop",
+      category: "Necklaces"
+    },
+    {
+      id: 7,
+      name: "Platinum Studs",
+      price: "$1,500",
+      image: "https://images.unsplash.com/photo-1588444839138-eb6a5c1631ca?q=80&w=1000&auto=format&fit=crop",
+      category: "Earrings"
+    },
+    {
+      id: 8,
+      name: "Oceanic Charm Bracelet",
+      price: "$2,400",
+      image: "https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?q=80&w=1000&auto=format&fit=crop",
+      category: "Bracelets"
     }
   ];
 
@@ -84,32 +112,40 @@ document.addEventListener('DOMContentLoaded', () => {
     observer.observe(el);
   });
 
-  // Render Products
-  const productGrid = document.getElementById('product-grid');
-  if (productGrid) {
-    products.forEach(product => {
-      const card = document.createElement('div');
-      card.className = 'product-card fade-in';
-      card.innerHTML = `
-                <div class="card-image-wrapper">
-                    <img src="${product.image}" alt="${product.name}" class="card-image" loading="lazy">
-                    <div class="quick-view">Quick View</div>
-                </div>
-                <div class="card-info">
-                    <h3 class="card-title">${product.name}</h3>
-                    <p class="card-price">${product.price}</p>
-                </div>
-            `;
+  // Render Products Function
+  function renderProducts(gridId, productList) {
+    const grid = document.getElementById(gridId);
+    if (grid) {
+      grid.innerHTML = '';
+      productList.forEach(product => {
+        const card = document.createElement('div');
+        card.className = 'product-card fade-in';
+        card.innerHTML = `
+                  <div class="card-image-wrapper">
+                      <img src="${product.image}" alt="${product.name}" class="card-image" loading="lazy">
+                      <div class="quick-view">Quick View</div>
+                  </div>
+                  <div class="card-info">
+                      <h3 class="card-title">${product.name}</h3>
+                      <p class="card-price">${product.price}</p>
+                  </div>
+              `;
 
-      // Modal Interaction
-      card.addEventListener('click', () => {
-        openModal(product);
+        card.addEventListener('click', () => {
+          openModal(product);
+        });
+
+        grid.appendChild(card);
+        observer.observe(card);
       });
-
-      productGrid.appendChild(card);
-      observer.observe(card);
-    });
+    }
   }
+
+  // Render on main page (Latest Collection)
+  renderProducts('product-grid', products.slice(0, 8));
+
+  // Render on collections page (Full Catalog)
+  renderProducts('full-catalog-grid', products);
 
   // Modal Logic
   const modal = document.getElementById('product-modal');

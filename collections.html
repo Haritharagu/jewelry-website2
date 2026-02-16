@@ -17,13 +17,13 @@
 <body>
   <div id="app">
     <!-- Navigation -->
-    <nav class="navbar" id="navbar">
+    <nav class="navbar scrolled" id="navbar">
       <div class="container nav-content">
         <div class="nav-links">
           <a href="collections.html">Collections</a>
-          <a href="#about">Our Story</a>
+          <a href="index.html#about">Our Story</a>
         </div>
-        <a href="#" class="logo">LUMIÈRE</a>
+        <a href="index.html" class="logo">LUMIÈRE</a>
         <div class="nav-icons">
           <button class="icon-btn" aria-label="Search">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
@@ -48,27 +48,30 @@
       </div>
     </nav>
 
-    <!-- Hero Section -->
-    <header class="hero">
-      <div class="hero-bg" id="hero-bg"></div>
+    <!-- Collections Hero -->
+    <header class="hero" style="min-height: 50vh;">
+      <div class="hero-bg"
+        style="background-image: url('https://images.unsplash.com/photo-1573408301185-9146fe634ad0?q=80&w=2075&auto=format&fit=crop'); opacity: 0.8;">
+      </div>
       <div class="hero-content text-center">
-        <p class="hero-subtitle fade-in" style="animation-delay: 0.2s;">Elegance Redefined</p>
-        <h1 class="hero-title fade-in" style="animation-delay: 0.4s;">Timeless Beauty</h1>
-        <a href="#shop" class="btn-primary fade-in" style="animation-delay: 0.6s;">
-          Explore Collection
-          <span class="shimmer"></span>
-        </a>
+        <h1 class="hero-title fade-in">The Collection</h1>
+        <p class="hero-subtitle fade-in">Timeless craftsmanship, curated for the modern soul.</p>
       </div>
     </header>
 
-    <!-- Featured Collection / Product Grid -->
-    <section id="shop" class="section">
+    <!-- Full Product Catalog -->
+    <section id="catalog" class="section">
       <div class="container">
         <div class="section-header text-center">
-          <h2 class="section-title fade-in">Latest Collection</h2>
+          <h2 class="section-title fade-in">All Pieces</h2>
           <div class="divider fade-in"></div>
+          <p class="section-subtitle fade-in" style="max-width: 600px; margin: 20px auto;">
+            Explore our complete atelier. From classic heritage pieces to contemporary limited editions,
+            every creation is a testament to the art of luxury.
+          </p>
         </div>
-        <div class="product-grid" id="product-grid">
+
+        <div class="product-grid" id="full-catalog-grid">
           <!-- Products injected by JS -->
         </div>
       </div>
