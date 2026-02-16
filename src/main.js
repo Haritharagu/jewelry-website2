@@ -89,10 +89,24 @@ document.addEventListener('DOMContentLoaded', () => {
       price: "$2,400",
       image: "https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?q=80&w=1000&auto=format&fit=crop",
       category: "Bracelets"
+    },
+    {
+      id: 9,
+      name: "Art Deco Tiara",
+      price: "$12,000",
+      image: "https://images.unsplash.com/photo-1598560917505-59a3ad559071?q=80&w=1000&auto=format&fit=crop",
+      category: "Exclusives"
+    },
+    {
+      id: 10,
+      name: "Midnight Amethyst",
+      price: "$2,100",
+      image: "https://images.unsplash.com/photo-1602810318383-e386cc2a3ccf?q=80&w=1000&auto=format&fit=crop",
+      category: "Necklaces"
     }
   ];
 
-  // Initialize Intersection Observer for Fade-in Animations
+  // Initialize Intersection Observer for Animations
   const observerOptions = {
     threshold: 0.1,
     rootMargin: "0px"
@@ -117,12 +131,19 @@ document.addEventListener('DOMContentLoaded', () => {
     const grid = document.getElementById(gridId);
     if (grid) {
       grid.innerHTML = '';
-      productList.forEach(product => {
+      productList.forEach((product, index) => {
         const card = document.createElement('div');
+        // Add staggering delay via inline style
         card.className = 'product-card fade-in';
+        card.style.animationDelay = `${index * 0.1}s`;
+
         card.innerHTML = `
                   <div class="card-image-wrapper">
-                      <img src="${product.image}" alt="${product.name}" class="card-image" loading="lazy">
+                      <img src="${product.image}" 
+                           alt="${product.name}" 
+                           class="card-image" 
+                           loading="lazy"
+                           onerror="this.src='https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?q=80&w=1000&auto=format&fit=crop';">
                       <div class="quick-view">Quick View</div>
                   </div>
                   <div class="card-info">
@@ -141,8 +162,8 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
-  // Render on main page (Latest Collection)
-  renderProducts('product-grid', products.slice(0, 8));
+  // Render on main page (Latest Collection - show all 10)
+  renderProducts('product-grid', products);
 
   // Render on collections page (Full Catalog)
   renderProducts('full-catalog-grid', products);
