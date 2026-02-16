@@ -147,4 +147,45 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Expose products to be used by other modules if needed
   window.products = products;
+
+  // Contact Form Submission
+  const contactForm = document.querySelector('.contact-form');
+  if (contactForm) {
+    contactForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const btn = contactForm.querySelector('button');
+      const originalText = btn.textContent;
+
+      btn.textContent = 'Sending...';
+      btn.disabled = true;
+
+      // Simulate network request
+      setTimeout(() => {
+        btn.textContent = 'Message Sent';
+        contactForm.reset();
+
+        setTimeout(() => {
+          btn.textContent = originalText;
+          btn.disabled = false;
+        }, 3000);
+      }, 1500);
+    });
+  }
+
+  // Add to Cart Logic (Modal)
+  const addToCartBtn = document.querySelector('.btn-add-cart');
+  if (addToCartBtn) {
+    addToCartBtn.addEventListener('click', () => {
+      const originalText = addToCartBtn.innerHTML; // Keep shimmer span
+      addToCartBtn.textContent = 'Added to Cart';
+      addToCartBtn.style.backgroundColor = 'var(--color-gold)';
+      addToCartBtn.style.color = 'var(--color-white)';
+
+      setTimeout(() => {
+        addToCartBtn.innerHTML = originalText;
+        addToCartBtn.style.backgroundColor = '';
+        addToCartBtn.style.color = '';
+      }, 2000);
+    });
+  }
 });
