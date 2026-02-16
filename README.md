@@ -18,7 +18,7 @@ A modern, high-end e-commerce website for a luxury jewelry brand. Built with Vit
 
 1.  Clone the repository:
     ```bash
-    git clone https://github.com/Haritharagu/jewelry_website.git
+    git clone https://github.com/Haritharagu/jewelry-website2.git
     ```
 2.  Install dependencies:
     ```bash
